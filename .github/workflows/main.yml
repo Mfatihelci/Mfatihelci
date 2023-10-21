@@ -52,3 +52,20 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          // Last job:
+
+  fail-on-job2:
+    # Without this step workflow remains "green" if job2 does fail.
+    name: Job2 Status -> Workflow Status
+    needs:
+      - job1
+      - job2
+      - job3
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v2
+      - name: Check Job Status status and fail if they are red
+        if: env.WORKFLOW_CONCLUSION == 'failure'
+        run: exit 1
