@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Muhammed Fatih Elci</h1>
+<h1 align="center">Hi 👋, I'm Muhammed Fatih Elçi</h1>
 <h3 align="center">A passionate frontend developer from Turkey</h3>
 
 - 🔭 I’m currently working on **Freelance**
